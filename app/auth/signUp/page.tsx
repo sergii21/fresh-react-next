@@ -1,5 +1,6 @@
-import GoogleSignUp from "./googleSignUp";
+// import GoogleSignUp from "./googleSignUp";
 
 export default function SignUpPage() {
-  return <GoogleSignUp />;
+  return <div></div>;
+  // return <GoogleSignUp />;
 }

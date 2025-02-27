@@ -9,9 +9,10 @@ import H1 from "../UI/h1";
 
 type InputFormType = { name: string, manufacturer: string, dueDate: string, quantity: string };
 
-async function inputFormAction(prevState, formData: FormData) {
-  const { name, manufacturer, dueDate, quantity } =
-    Object.fromEntries(formData) as InputFormType;
+async function inputFormAction(prevState: unknown, formData: FormData) {
+  const { name, manufacturer, dueDate, quantity } = Object.fromEntries(
+    formData
+  ) as InputFormType;
 
   const errors: string[] | null = [];
 
@@ -19,7 +20,7 @@ async function inputFormAction(prevState, formData: FormData) {
     errors.push("Product name can't be empty");
   }
 
-  await new Promise((resolve) => setTimeout(resolve, 1000))
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   if (errors.length > 0) {
     return {
