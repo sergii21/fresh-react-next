@@ -1,11 +1,23 @@
+"use client";
 
-import InputForm from "./inputForm"
+import { useState } from "react";
+import PageHeader from "../UI/pageHeader";
+import PageLayout from "../UI/pageLayout";
+import InputForm from "./inputForm";
 
 export default function InputPage() {
-    return (
+  const [addFormOpened, setAddFormOpened] = useState(false);
+
+  function handleSetAddFormOpened() {
+    setAddFormOpened(!addFormOpened);
+  }
+
+  return (
     <>
-    <h1>Hello from Input page</h1>
-    <InputForm></InputForm>
+      <PageHeader handleSetAddFormOpened={handleSetAddFormOpened}></PageHeader>
+      <PageLayout>
+        <InputForm addFormOpened={addFormOpened}></InputForm>
+      </PageLayout>
     </>
-    )
+  );
 }
